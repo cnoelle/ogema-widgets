@@ -32,7 +32,6 @@ import org.ogema.core.resourcemanager.ResourceAccess;
 import org.ogema.model.locations.Room;
 import org.ogema.tools.resource.util.ResourceUtils;
 
-import de.iwes.util.linkingresource.RoomHelper;
 import de.iwes.widgets.api.extended.html.bricks.PageSnippet;
 import de.iwes.widgets.api.widgets.OgemaWidget;
 import de.iwes.widgets.api.widgets.WidgetGroup;
@@ -265,9 +264,7 @@ public class NewRoomPopupBuilder {
 
 		@Override
 		public String getLabel(Integer object, OgemaLocale locale) {
-			if(Boolean.getBoolean("org.ogema.messaging.basic.services.config.fixconfigenglish"))
-				locale = OgemaLocale.ENGLISH;
-			return RoomHelper.getRoomTypeString(object, locale);
+			return RoomHelper.getRoomTypeString(object);
 		}
 	};
 	
