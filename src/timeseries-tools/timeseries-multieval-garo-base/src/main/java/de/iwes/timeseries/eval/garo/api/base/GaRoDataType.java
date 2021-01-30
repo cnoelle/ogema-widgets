@@ -35,6 +35,7 @@ import org.ogema.core.model.units.FrequencyResource;
 import org.ogema.core.model.units.PercentageResource;
 import org.ogema.core.model.units.PowerResource;
 import org.ogema.core.model.units.TemperatureResource;
+import org.ogema.core.model.units.VelocityResource;
 import org.ogema.core.model.units.VoltageResource;
 import org.ogema.core.model.units.VolumeResource;
 import org.ogema.generictype.GenericAttribute;
@@ -140,6 +141,8 @@ public class GaRoDataType implements GaRoDataTypeI {
 			BooleanResource.class);
 	public static final GaRoDataType LightSensor = new GaRoDataType("LightSensor",
 			BrightnessResource.class);
+	public static final GaRoDataType LightSensorRaw = new GaRoDataType("LightSensorRaw",
+			FloatResource.class);
 	public static final GaRoDataType ChargeSensor = new GaRoDataType("ChargeSensor",
 			BooleanResource.class);
 	public static final GaRoDataType ChargeVoltage = new GaRoDataType("ChargeVoltage",
@@ -232,6 +235,9 @@ public class GaRoDataType implements GaRoDataTypeI {
 			IntegerResource.class);
 	public static final GaRoDataType RouterIPv6SSH = new GaRoDataType("IPv6_SSH",
 			IntegerResource.class);
+	public static final GaRoDataType UptimeInterval = new GaRoDataType("UptimeInterval",
+			TimeResource.class);
+
 	public static final GaRoDataType HeartbeatSendInterval = new GaRoDataType("HeartbeatSendInterval",
 			TimeResource.class);
 	public static final GaRoDataType HeartbeatMaxInterval = new GaRoDataType("HeartbeatMaxInterval",
@@ -261,6 +267,20 @@ public class GaRoDataType implements GaRoDataTypeI {
 	public static final GaRoDataType SmokeDetect = new GaRoDataType("SmokeDetect",
 			BooleanResource.class);
 	public static final GaRoDataType SmokeDetectError = new GaRoDataType("SmokeDetectError",
+			BooleanResource.class);
+
+	public static final GaRoDataType RainCounter = new GaRoDataType("RainCounter",
+			FloatResource.class);
+	public static final GaRoDataType RainStatus = new GaRoDataType("RainStatus",
+			BooleanResource.class);
+	public static final GaRoDataType WindSpeed = new GaRoDataType("WindSpeed",
+			VelocityResource.class);
+	public static final GaRoDataType WindDirection = new GaRoDataType("WindDirection",
+			AngleResource.class);
+
+	public static final GaRoDataType SirenStatus = new GaRoDataType("SirenStatus",
+			BooleanResource.class);
+	public static final GaRoDataType CO_Alert = new GaRoDataType("CO_Alert",
 			BooleanResource.class);
 
 	//The following options are per-gateway
@@ -350,6 +370,10 @@ public class GaRoDataType implements GaRoDataTypeI {
 	};
 	
 	//The following options are not linked to a specific GaRo level
+	public static final GaRoDataType KPI_DURATION = new GaRoDataType("Duration",
+			TimeResource.class);
+	
+	//General
 	public static final GaRoDataType Internal = new GaRoDataType("Internal",
 			SingleValueResource.class);
 	public static final GaRoDataType Unknown = new GaRoDataType("Unknown",
